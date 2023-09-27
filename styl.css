@@ -1,0 +1,17 @@
+body{
+    background: linear-gradient(to right, #008cff, #0059ff);
+}
+
+h1{
+    text-align: center;
+    border: 2px solid red;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: rgb(150, 0, 0);
+    color: white;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    box-shadow: 2px 2px black;
+}
+#przedmiot, #rok, #prowadzacy{
+    margin-top: 40px;
+}
