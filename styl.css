@@ -19,3 +19,17 @@ h1{
 #imie{
     margin-top: 300px;
 }
+
+@media screen and (max-width: 1180px) {
+    h1 {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+  }
+
+@media screen and (max-width: 380px) {
+    h1 {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
