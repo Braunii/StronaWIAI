@@ -71,8 +71,33 @@ function changecolor(button){
     else if (button == "dopotegi"){
         plus.classList.remove('active');
         minus.classList.remove('active');
-        razy.classList.remove('active');
-        przez.classList.remove('active');
-        dopotegi.classList.add('active');
     }
 }
+
+function navbar(page){
+    let home = document.getElementById('home_container');
+    let calculator = document.getElementById('calculator');
+
+    if (page == "home"){
+        home.classList.add('active-navbar');
+        calculator.classList.remove('active-navbar');
+    }
+    else if (page == "calculator"){
+        home.classList.remove('active-navbar');
+        calculator.classList.add('active-navbar');
+    }
+}
+function autonavbar(){
+    window.addEventListener("scroll", (event) => {
+        let scroll = this.scrollY;
+        if (scroll < 500){
+            navbar("home");
+        }
+        else if (scroll >= 500){
+            navbar("calculator")
+        }
+    });
+}
+
+setInterval(autonavbar, 0);
+navbar("home");

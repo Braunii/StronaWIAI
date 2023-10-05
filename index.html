@@ -7,28 +7,36 @@
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-    <h1 id="imie">Szymon Braune</h1>
-    <h1 id="przedmiot">Witryny i aplikacje internetowe</h1>
-    <h1 id="rok">2023</h1>
-    <h1 id="prowadzacy">Jakub Sałach</h1>
-
-    <div id="buttons">
-        <button id="plus" onclick="oblicz('plus'); changecolor('plus')">Dodawanie</button>
-        <button id="minus" onclick="oblicz('minus'); changecolor('minus')">Odejmowanie</button>
-        <button id="razy" onclick="oblicz('iloczyn'); changecolor('razy')">Mnożenie</button>
-        <button id="przez" onclick="oblicz('iloraz'); changecolor('przez')">Dzielenie</button>
-        <button id="dopotegi" onclick="oblicz('do'); changecolor('dopotegi')">Potęga</button>
+    <div id="navbar_container">
+        <ul id="navbar">
+            <li><a href="#" id="home_container" onclick="navbar('home')">Strona Główna</a></li>
+            <li><a href="#calculator_container" id="calculator" onclick="navbar('calculator')">Kalkulator</a></li>
+        </ul>
     </div>
-    <div id="container">
-        <br>
-        Liczba a: <input type="number" name="a" id="a">
-        <br>
-        Liczba b: <input type="number" name="b" id="b">
-        <br>
-        <p id="wynik">a + b = c</p>
+    <div id="home">
+        <h1 id="imie">Szymon Braune</h1>
+        <h1 id="przedmiot">Witryny i aplikacje internetowe</h1>
+        <h1 id="rok">2023</h1>
+        <h1 id="prowadzacy">Jakub Sałach</h1>
     </div>
-    <p id="tutorial">Poradnik korzystania: <br> 1.Wprowadź a i b <br> 2. Kliknij działanie</p>
-
+    <div id="calculator_container">
+        <div id="buttons">
+            <button id="plus" onclick="oblicz('plus'); changecolor('plus')">Dodawanie</button>
+            <button id="minus" onclick="oblicz('minus'); changecolor('minus')">Odejmowanie</button>
+            <button id="razy" onclick="oblicz('iloczyn'); changecolor('razy')">Mnożenie</button>
+            <button id="przez" onclick="oblicz('iloraz'); changecolor('przez')">Dzielenie</button>
+            <button id="dopotegi" onclick="oblicz('do'); changecolor('dopotegi')">Potęga</button>
+        </div>
+        <div id="container">
+            <br>
+            Liczba a: <input type="number" name="a" id="a">
+            <br>
+            Liczba b: <input type="number" name="b" id="b">
+            <br>
+            <p id="wynik">a + b = c</p>
+        </div>
+        <p id="tutorial">Poradnik korzystania: <br> 1.Wprowadź a i b <br> 2. Kliknij działanie</p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
