@@ -71,6 +71,9 @@ function changecolor(button){
     else if (button == "dopotegi"){
         plus.classList.remove('active');
         minus.classList.remove('active');
+        razy.classList.remove('active');
+        przez.classList.remove('active');
+        dopotegi.classList.add('active');
     }
 }
 
