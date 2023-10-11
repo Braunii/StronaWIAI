@@ -21,21 +21,21 @@
     </div>
     <div id="calculator_container">
         <div id="buttons">
-            <button id="plus" onclick="oblicz('plus'); changecolor('plus')">Dodawanie</button>
-            <button id="minus" onclick="oblicz('minus'); changecolor('minus')">Odejmowanie</button>
-            <button id="razy" onclick="oblicz('iloczyn'); changecolor('razy')">Mnożenie</button>
-            <button id="przez" onclick="oblicz('iloraz'); changecolor('przez')">Dzielenie</button>
-            <button id="dopotegi" onclick="oblicz('do'); changecolor('dopotegi')">Potęga</button>
+            <button id="plus" onclick="pokaz('plus'); changecolor('plus'); change()">Dodawanie</button>
+            <button id="minus" onclick="pokaz('minus'); changecolor('minus'); change()">Odejmowanie</button>
+            <button id="razy" onclick="pokaz('iloczyn'); changecolor('razy'); change()">Mnożenie</button>
+            <button id="przez" onclick="pokaz('iloraz'); changecolor('przez'); change()">Dzielenie</button>
+            <button id="dopotegi" onclick="pokaz('do'); changecolor('dopotegi'); change()">Potęga</button>
         </div>
         <div id="container">
             <br>
-            Liczba a: <input type="number" name="a" id="a">
+            Liczba a: <input type="number" name="a" id="a" onchange="change()">
             <br>
-            Liczba b: <input type="number" name="b" id="b">
+            Liczba b: <input type="number" name="b" id="b" onchange="change()">
             <br>
             <p id="wynik">a + b = c</p>
         </div>
-        <p id="tutorial">Poradnik korzystania: <br> 1.Wprowadź a i b <br> 2. Kliknij działanie</p>
+        <p id="tutorial">Poradnik korzystania: <br> 1.Zaznacz działanie <br> 2. Wprowadź a oraz b</p>
     </div>
     <script src="script.js"></script>
 </body>

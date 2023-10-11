@@ -1,36 +1,54 @@
-function oblicz(dzialanie){
+var dodawanie = false;
+var odejmowanie = false;
+var mnozenie = false;
+var dzielenie = false;
+var potegowanie = false;
+
+
+function pokaz(dzialanie){
+    
     let a = document.getElementById('a').value;
     let b = document.getElementById('b').value;
-    let wynik = document.getElementById('wynik');
-
-    let suma = Number(a) + Number(b);
-    let roznica = a-b;
-    let iloczyn = a*b;
-    let iloraz = a/b;
-    let potega = Math.pow(a, b);
 
     if (dzialanie == "plus"){
-        wynik.innerHTML = a + " + " + b + " = " + suma;
+        wynik.innerHTML = "a + b = c";
+        dodawanie = true;
+        odejmowanie = false;
+        mnozenie = false;
+        dzielenie = false;
+        potegowanie = false;
     }
     else if (dzialanie == "minus"){
-        wynik.innerHTML = a + " - " + b + " = " + roznica;
+        wynik.innerHTML = "a - b = c";
+        dodawanie = false;
+        odejmowanie = true;
+        mnozenie = false;
+        dzielenie = false;
+        potegowanie = false;
     }
     else if (dzialanie == "iloczyn"){
-        wynik.innerHTML = a + " * " + b + " = " + iloczyn;
+        wynik.innerHTML = "a * b = c";
+        dodawanie = false;
+        odejmowanie = false;
+        mnozenie = true;
+        dzielenie = false;
+        potegowanie = false;
     }
     else if (dzialanie == "iloraz"){
-        wynik.innerHTML = a + " / " + b + " = " + iloraz;
+        wynik.innerHTML = "a / b = c";
+        dodawanie = false;
+        odejmowanie = false;
+        mnozenie = false;
+        dzielenie = true;
+        potegowanie = false;
     }
     else if (dzialanie == "do"){
-        wynik.innerHTML = a + b.sup() + " = " + potega;
-    }
-
-    if (a == "" || b == ""){
-        wynik.innerHTML = "Wprowadź prawidłowe liczby";
-    }
-
-    if (dzialanie == "iloraz" && b === "0"){
-        wynik.innerHTML = "Pamiętaj cholero, nie dziel przez zero!";
+        wynik.innerHTML = "a" + "b".sup() + " = c";
+        dodawanie = false;
+        odejmowanie = false;
+        mnozenie = false;
+        dzielenie = false;
+        potegowanie = true;
     }
 }
 let plus = document.getElementById('plus');
@@ -38,6 +56,96 @@ let minus = document.getElementById('minus');
 let razy = document.getElementById('razy');
 let przez = document.getElementById('przez');
 let dopotegi = document.getElementById('dopotegi');
+
+function change(){
+
+    let a = document.getElementById('a').value;
+    let b = document.getElementById('b').value;
+
+    let suma = Number(a) + Number(b);
+    let roznica = a - b;
+    let iloczyn = a * b;
+    let iloraz = a / b;
+    let potega = Math.pow(a,b);
+
+    if (a != "" && b == ""){       
+        if (dodawanie == true){
+            wynik.innerHTML = a + " + b = c";
+        }
+        else if (odejmowanie == true){
+            wynik.innerHTML = a + " - b = c";
+        }
+        else if (mnozenie == true){
+            wynik.innerHTML = a + " * b = c";
+        }
+        else if (dzielenie == true){
+            wynik.innerHTML = a + " / b = c";
+        }
+        else if (potegowanie == true){
+            wynik.innerHTML = a + "b".sup() + " = c";
+        }
+        else{
+            wynik.innerHTML = "Zaznacz działanie";
+        }
+    }
+    else if (a == "" && b == ""){
+        if (dodawanie == true){
+            wynik.innerHTML = "a + b = c";
+        }
+        else if (odejmowanie == true){
+            wynik.innerHTML = "a - b = c";
+        }
+        else if (mnozenie == true){
+            wynik.innerHTML = "a * b = c";
+        }
+        else if (dzielenie == true){
+            wynik.innerHTML = "a / b = c";
+        }
+        else if (potegowanie == true){
+            wynik.innerHTML = "a" + "b".sup() + " = c";
+        }
+    }
+    else if (a == "" && b != ""){
+        if (dodawanie == true){
+            wynik.innerHTML = "a + " + b + " = c";
+        }
+        else if (odejmowanie == true){
+            wynik.innerHTML = "a - " + b + " = c";
+        }
+        else if (mnozenie == true){
+            wynik.innerHTML = "a * " + b + " = c";
+        }
+        else if (dzielenie == true){
+            wynik.innerHTML = "a / " + b + " = c";
+        }
+        else if (potegowanie == true){
+            wynik.innerHTML = "a" + b.sup() + " = c";
+        }
+        else{
+            wynik.innerHTML = "Zaznacz działanie";
+        }
+    }
+    else if (a != "" && b != ""){
+        if (dodawanie == true){
+            wynik.innerHTML = a + " + " + b + " = " + suma;
+        }
+        else if (odejmowanie == true){
+            wynik.innerHTML = a + " - " + b + " = " + roznica;
+        }
+        else if (mnozenie == true){
+            wynik.innerHTML = a + " * " + b + " = " + iloczyn;
+        }
+        else if (dzielenie == true){
+            wynik.innerHTML = a + " / " + b + " = " + iloraz;
+        }
+        else if (potegowanie == true){
+            wynik.innerHTML = a + b.sup() + " = " + potega;
+        }
+        else{
+            wynik.innerHTML = "Zaznacz działanie";
+        } 
+    }
+}
 
 function changecolor(button){
     if (button == "plus"){

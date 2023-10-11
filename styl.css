@@ -68,6 +68,7 @@ button{
 }
 button:hover{
     background-color: rgb(255, 102, 0);
+    transition: 0.1s ease-in;
 }
 .active{
     background-color: red;
@@ -75,9 +76,6 @@ button:hover{
 .active-navbar{
     color: red;
     border-bottom: 2px solid greenyellow;
-}
-.active-navbar:hover{
-    color: rgb(255, 153, 0);
 }
 #tutorial{
     text-align: center;
@@ -109,7 +107,7 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color: #cccccc;
+    cursor: pointer;
 }
 #home{
     height: 800px;
@@ -117,4 +115,10 @@ a:hover{
 }
 #calculator_container{
     height: 800px;
+}
+#tutorial{
+    font-size: 45px;
+    color: #00d9ff;
+    text-shadow: 3px 3px black;
+    margin-top: 20px;
 }
